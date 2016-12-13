@@ -17,6 +17,10 @@ namespace DynamicArray
         {
             get
             {
+                if (index >= size)
+                {
+                    return default (T);
+                }
                 return matrix[index];
             }
 
@@ -64,7 +68,8 @@ namespace DynamicArray
 
         public T Get(int index)
         {
-            return matrix[index];
+
+            return this[index];                     //return via the indexer property
         }
 
         public void Insert(int index, T value)
@@ -88,12 +93,27 @@ namespace DynamicArray
         }
 
         public void Remove(int index)
-        {   
-            for (int i = index; i < size; i++)
+        {
+            if (index >= size)
+            {
+                return;
+            }
+            for (int i = index; i < size; i++)  //move all elements to the left until deleted index reached
             {
                 matrix[i] = matrix[i + 1];
             }
             size--;
+            if (size * grFactor * 2 < capacity)             //check if size less than capacity more than in 4 times
+            {
+                T[] tempMatrix;
+                capacity = capacity / 2 / grFactor;
+                tempMatrix = new T[capacity];    //create new matrix less that original
+                for (int i = 0; i < size; i++)
+                {
+                    tempMatrix[i] = matrix[i];  //copy old matrix to the new
+                }
+                matrix = tempMatrix;
+            }
         }
 
         private T[] expand ()

@@ -41,6 +41,39 @@ namespace DynamicArray
             array[2] = 3;
             PrintArray(array);
 
+            array.Remove(0);
+            PrintArray(array);
+
+            array.Remove(0);
+            PrintArray(array);
+
+            array.Remove(0);
+            PrintArray(array);
+
+            array.Remove(0);
+            PrintArray(array);
+
+            array.Remove(0);
+            PrintArray(array);
+
+            array.Remove(0);
+            PrintArray(array);
+
+            array.Remove(0);
+            PrintArray(array);
+
+            array.Remove(0);
+            PrintArray(array);
+
+            array.Remove(0);
+            PrintArray(array);
+
+            array.Remove(0);
+            PrintArray(array);
+
+            array.Remove(0);
+            PrintArray(array);
+
         }
 
         static void PrintArray(DynamicArray<int> array)
@@ -50,7 +83,7 @@ namespace DynamicArray
             Console.WriteLine("size - " + array.Size);
             for (int i = 0; i < array.Size; i++)
             {
-                Console.Write(array.Get(i) + " ");
+                Console.Write(array[i] + " ");
             }
             Console.WriteLine();
             Console.ReadKey();
