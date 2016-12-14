@@ -10,82 +10,136 @@ namespace DynamicArray
     {
         static void Main(string[] args)
         {
-            DynamicArray<int> array = new DynamicArray<int>(2);
+            CheckStack();
+            CheckQueue();
+        }
 
-            PrintArray(array);
+        static void CheckStack()
+        {
+            DynamicStack<int> stack = new DynamicStack<int>(5);
 
-            array.Add(1);
-            PrintArray(array);
+            Console.WriteLine("Check Stack");
 
-            array.Add(2);
-            PrintArray(array);
+            PrintBuffer(stack);
 
-            array.Insert(8, 9);
-            PrintArray(array);
+            Console.WriteLine("Push 1");
+            stack.Push(1);
+            PrintBuffer(stack);
 
-            array.Add(10);
-            PrintArray(array);
+            Console.WriteLine("Peek " + stack.Peek());
+            PrintBuffer(stack);
 
-            array.Insert(6, 7);
-            PrintArray(array);
+            Console.WriteLine("Pop " + stack.Pop());
+            PrintBuffer(stack);
 
-            array.Insert(7, 8);
-            PrintArray(array);
+            Console.WriteLine("Push 1");
+            stack.Push(1);
+            PrintBuffer(stack);
+            Console.WriteLine("Push 2");
+            stack.Push(2);
+            PrintBuffer(stack);
+            Console.WriteLine("Push 3");
+            stack.Push(3);
+            PrintBuffer(stack);
+            Console.WriteLine("Push 4");
+            stack.Push(3);
+            PrintBuffer(stack);
+            Console.WriteLine("Push 5");
+            stack.Push(3);
+            PrintBuffer(stack);
+            Console.WriteLine("Push 6");
+            stack.Push(3);
+            PrintBuffer(stack);
 
-            array.Remove(8);
-            PrintArray(array);
+            Console.WriteLine("Peek " + stack.Peek());
+            PrintBuffer(stack);
 
-            array.Remove(8);
-            PrintArray(array);
-
-            array[2] = 3;
-            PrintArray(array);
-
-            array.Remove(0);
-            PrintArray(array);
-
-            array.Remove(0);
-            PrintArray(array);
-
-            array.Remove(0);
-            PrintArray(array);
-
-            array.Remove(0);
-            PrintArray(array);
-
-            array.Remove(0);
-            PrintArray(array);
-
-            array.Remove(0);
-            PrintArray(array);
-
-            array.Remove(0);
-            PrintArray(array);
-
-            array.Remove(0);
-            PrintArray(array);
-
-            array.Remove(0);
-            PrintArray(array);
-
-            array.Remove(0);
-            PrintArray(array);
-
-            array.Remove(0);
-            PrintArray(array);
+            Console.WriteLine("Pop " + stack.Pop());
+            PrintBuffer(stack);
+            Console.WriteLine("Pop " + stack.Pop());
+            PrintBuffer(stack);
+            Console.WriteLine("Pop " + stack.Pop());
+            PrintBuffer(stack);
+            Console.WriteLine("Pop " + stack.Pop());
+            PrintBuffer(stack);
+            Console.WriteLine("Pop " + stack.Pop());
+            PrintBuffer(stack);
+            Console.WriteLine("Pop " + stack.Pop());
+            PrintBuffer(stack);
 
         }
 
-        static void PrintArray(DynamicArray<int> array)
+        static void CheckQueue()
         {
-            Console.WriteLine();
-            Console.WriteLine("capacity - " + array.Capacity);
-            Console.WriteLine("size - " + array.Size);
-            for (int i = 0; i < array.Size; i++)
-            {
-                Console.Write(array[i] + " ");
-            }
-            Console.WriteLine();
+            DynamicQueue<int> queue = new DynamicQueue<int>(5);
+            Console.WriteLine("Check queue");
+
+            PrintBuffer(queue);
+
+            queue.Enqueue(1);
+            Console.WriteLine("add 1");
+            PrintBuffer(queue);
+
+            Console.WriteLine ("Peek: " + queue.Peek());
+            PrintBuffer(queue);
+
+            Console.WriteLine("Dequeue: " + queue.Dequeue());
+            PrintBuffer(queue);
+
+            queue.Enqueue(1);
+            Console.WriteLine("add 1");
+            PrintBuffer(queue);
+            queue.Enqueue(2);
+            Console.WriteLine("add 2");
+            PrintBuffer(queue);
+            queue.Enqueue(3);
+            Console.WriteLine("add 3");
+            PrintBuffer(queue);
+            queue.Enqueue(4);
+            Console.WriteLine("add 4");
+            PrintBuffer(queue);
+            queue.Enqueue(5);
+            Console.WriteLine("add 5");
+            PrintBuffer(queue);
+            queue.Enqueue(6);
+            Console.WriteLine("add 6");
+            PrintBuffer(queue);
+
+            Console.WriteLine("Peek: " + queue.Peek());
+            PrintBuffer(queue);
+
+            Console.WriteLine("Peek: " + queue.Peek());
+            PrintBuffer(queue);
+
+            Console.WriteLine("Dequeue: " + queue.Dequeue());
+            PrintBuffer(queue);
+
+            Console.WriteLine("Dequeue: " + queue.Dequeue());
+            PrintBuffer(queue);
+
+            Console.WriteLine("Dequeue: " + queue.Dequeue());
+            PrintBuffer(queue);
+
+            Console.WriteLine("Dequeue: " + queue.Dequeue());
+            PrintBuffer(queue);
+
+            Console.WriteLine("Dequeue: " + queue.Dequeue());
+            PrintBuffer(queue);
+
+            Console.WriteLine("Dequeue: " + queue.Dequeue());
+            PrintBuffer(queue);
+
+            Console.WriteLine("Dequeue: " + queue.Dequeue());
+            PrintBuffer(queue);
+
+
+        }
+
+        static void PrintBuffer(Buffer<int> buffer)
+        {
+            Console.WriteLine("Is full - " + buffer.IsFull());
+            Console.WriteLine("Is empty - " + buffer.IsEmpty());
+            buffer.Print();
             Console.ReadKey();
         }
 

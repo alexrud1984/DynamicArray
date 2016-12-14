@@ -43,10 +43,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Buffer.cs" />
     <Compile Include="DynamicArray.cs" />
+    <Compile Include="IBuffer.cs" />
     <Compile Include="IDynamicArray.cs" />
+    <Compile Include="IDynamicQueue.cs" />
+    <Compile Include="IDynamicStack.cs" />
+    <Compile Include="IPrintable.cs" />
+    <Compile Include="DynamicQueue.cs" />
+    <Compile Include="DynamicStack.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Something.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
