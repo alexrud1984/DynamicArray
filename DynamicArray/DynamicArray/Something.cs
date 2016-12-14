@@ -12,6 +12,7 @@ namespace DynamicArray
         public int Id { private set; get; }             //obj Id
         public string Name { set; get; }                //this field we will sort
 
+
         public int CompareTo(Something other)
         {
             
@@ -24,10 +25,11 @@ namespace DynamicArray
             return str;
         }
 
-        public Something()
+        public Something(string name)
         {
             Count++;
             Id=Count;
+            Name = name;
         }
 
     }
