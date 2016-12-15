@@ -101,7 +101,7 @@ namespace DynamicArray
             queue.Enqueue(new Something("5"));
             Console.WriteLine("add 5");
             PrintBuffer(queue);
-            queue.Enqueue(new Something("6"));
+            queue.Enqueue(new Something(""));
             Console.WriteLine("add 6");
             PrintBuffer(queue);
 
